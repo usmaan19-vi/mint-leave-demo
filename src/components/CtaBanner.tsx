@@ -6,14 +6,11 @@ import { Reveal } from "./Reveal";
 export function CtaBanner() {
   return (
     <section className="relative overflow-hidden bg-forest-deep py-20 text-ivory sm:py-24">
-      <LeafIcon
-        className="leaf-float pointer-events-none absolute -left-8 top-8 h-28 w-28 text-mint/10"
-      />
+      <LeafIcon className="leaf-float pointer-events-none absolute -left-8 top-8 h-28 w-28 text-mint/10" />
       <LeafIcon
         className="leaf-float pointer-events-none absolute -right-10 bottom-6 h-40 w-40 text-mint/10"
-        // staggered drift
+        style={{ animationDelay: "-3.5s" }}
       />
-      <style>{`.leaf-float:nth-of-type(2) { animation-delay: -3.5s; }`}</style>
       <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-mint">
