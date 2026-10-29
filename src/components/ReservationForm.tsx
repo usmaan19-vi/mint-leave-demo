@@ -42,7 +42,10 @@ function todayISO(): string {
 }
 
 function formatDate(iso: string): string {
-  const [y, m, d] = iso.split("-").map(Number);
+  const parts = iso.split("-").map(Number);
+  const y = parts[0] ?? 2000;
+  const m = parts[1] ?? 1;
+  const d = parts[2] ?? 1;
   return new Date(y, m - 1, d).toLocaleDateString("en-IN", {
     weekday: "short",
     day: "numeric",
@@ -84,7 +87,7 @@ const inputClasses = cn(
   "placeholder:text-muted-foreground/60 focus:border-forest focus:outline-none focus:ring-2 focus:ring-ring/40",
 );
 
-function FieldError({ message }: { message?: string }) {
+function FieldError({ message }: { message?: string | undefined }) {
   if (!message) return null;
   return (
     <p role="alert" className="mt-1.5 text-xs font-medium text-destructive">
