@@ -7,6 +7,7 @@ export default defineConfig({
     prerender: {
       enabled: true,
       crawlLinks: true,
+      autoSubfolderIndex: true,
       routes: [
         "/",
         "/about",
